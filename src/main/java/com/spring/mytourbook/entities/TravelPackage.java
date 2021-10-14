@@ -101,4 +101,5 @@ public class TravelPackage {
 	public void setTravels(List<Travels> travels) {
 		this.travels = travels;
 	}
+	
 }

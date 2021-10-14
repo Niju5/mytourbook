@@ -24,11 +24,11 @@ public class CustomerController {
 		return cservice.updateCustomer(customer);
 	}
 	@DeleteMapping("/dcustomer/{customerId}")
-	public String deleteCustomer(@PathVariable Long customerId) {
+	public String deleteCustomer(@PathVariable("customerId") Long customerId) {
 		return cservice.deleteCustomer(customerId);
 	}
 	@GetMapping("/vcustomer/{customerId}")
-	public Optional<Customer> viewCustomer(@PathVariable Long customerId){
+	public Optional<Customer> viewCustomer(@PathVariable("customerId") Long customerId){
 		return cservice.viewCustomer(customerId);
 		
 	}

@@ -25,12 +25,13 @@ public class PackageController {
 	public TravelPackage addPackage(@RequestBody TravelPackage travelPackage) {
 		return pservice.addPackage(travelPackage);
 	}
-	@DeleteMapping("/dpackage")
-	public TravelPackage deletePackage(@RequestBody Long packageId) {
+	@DeleteMapping("/dpackage/{packageId}")
+	public String deletePackage(@PathVariable("packageId") Long packageId) {
+		System.out.println("Deleted package");
 		return pservice.deletePackage(packageId);
 	}
 	@GetMapping("/spackage/{packageId}")
-	public Optional<TravelPackage> searchPackage(@PathVariable Long packageId) {
+	public Optional<TravelPackage> searchPackage(@PathVariable("packageId") Long packageId) {
 		return pservice.searchPackage(packageId);
 	}
 	@GetMapping("/vpackages")

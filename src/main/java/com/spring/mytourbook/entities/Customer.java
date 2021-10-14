@@ -43,11 +43,11 @@ public class Customer {
 		}
 		String customerPassword;
 	    
-	    @OneToOne(cascade=CascadeType.ALL)
+	   /* @OneToOne(cascade=CascadeType.ALL)
 	    
 	    @JoinColumn(name="FEEDBACK_ID")
 	    
-	    private Feedback feedback;
+	    private Feedback feedback;*/
 	
 	public User getUser() {
 			return user;
@@ -55,14 +55,14 @@ public class Customer {
 		public void setUser(User user) {
 			this.user = user;
 		}
-		public Feedback getFeedback() {
+	/*	public Feedback getFeedback() {
 			return feedback;
 		}
 		public void setFeedback(Feedback feedback) {
 			this.feedback = feedback;
-		}
+		}*/
 	public Customer(Long customerId, String customerName, String address, String email, String mobileNo, User user,
-				String customerPassword, Feedback feedback) {
+				String customerPassword) {
 			super();
 			this.customerId = customerId;
 			this.customerName = customerName;
@@ -71,7 +71,7 @@ public class Customer {
 			this.mobileNo = mobileNo;
 			this.user = user;
 			this.customerPassword = customerPassword;
-			this.feedback = feedback;
+			//this.feedback = feedback;
 		}
 	/*int customerId;
 	String customerName;

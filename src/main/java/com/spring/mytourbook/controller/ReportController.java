@@ -26,11 +26,11 @@ public class ReportController {
 		return rservice.addReport(report);
 	}
 	@DeleteMapping("/dreport/{reportId}")
-	public String deleteReport(@PathVariable Long reportId) {
+	public String deleteReport(@PathVariable("reportId")  Long reportId) {
 		return rservice.deleteReport(reportId);
 	}
 	@GetMapping("/vreport/{reportId}")
-	public Optional<Report> viewReport(@PathVariable Long reportId) {
+	public Optional<Report> viewReport(@PathVariable("reportId") Long reportId) {
 		return rservice.viewReport(reportId);
 	}
 	@GetMapping("/vreports")

@@ -3,6 +3,7 @@ package com.spring.mytourbook.service;
 import java.util.List;
 import java.util.Optional;
 
+import com.spring.mytourbook.entities.Customer;
 import com.spring.mytourbook.entities.Feedback;
 
 public interface IFeedbackService {
@@ -10,5 +11,7 @@ public interface IFeedbackService {
 	public Optional<Feedback> findByFeedbackId(Long feedbackId);
 	public Optional<Feedback> findByCustomerId(Long customerId);
 	public List<Feedback>  viewAllFeedbacks();
+	
+	Feedback findByCustomerIdd(Long customerId);
 
 }

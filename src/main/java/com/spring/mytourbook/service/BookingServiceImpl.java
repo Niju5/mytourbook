@@ -7,20 +7,33 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.mytourbook.entities.Booking;
+import com.spring.mytourbook.entities.TravelPackage;
 import com.spring.mytourbook.repository.IBookingRepository;
+import com.spring.mytourbook.repository.IPackageRepository;
 
 @Service
 
 public class BookingServiceImpl implements IBookingService{
 	@Autowired
     IBookingRepository repo;
+	@Autowired
+    IPackageRepository repot;
 	@Override
 	public Booking makeBooking(Booking booking) {
 		// TODO Auto-generated method stub
-		  System.out.println("Successfully saved");
-		  return repo.save(booking);
 		
-	}
+			TravelPackage travelPackage = booking.getTravelPackage();
+			if(travelPackage!=null) {
+			long packageId = travelPackage.getPackageId();
+			Optional<TravelPackage> res_package=repot.findById(packageId);
+			if(res_package.isPresent()) {
+				booking.setTravelPackage(res_package.get());
+			}
+			}
+			System.out.println("Successfully saved");
+			 return repo.save(booking);
+			}
+		  
 
 	@Override
 	

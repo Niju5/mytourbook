@@ -31,11 +31,11 @@ public class TravelsController {
 		return tservice.updateTravels(travels);
 	}
 	@DeleteMapping("/rtravels/{travelsId}")
-	public String removeTravels(@PathVariable Long travelsId) {
+	public String removeTravels(@PathVariable("travelsId") Long travelsId) {
 		return tservice.removeTravels(travelsId);
 	}
 	@GetMapping("/stravels/{travelsId}")
-	public Optional<Travels> searchTravels(@PathVariable Long travelsId) {
+	public Optional<Travels> searchTravels(@PathVariable("travelsId") Long travelsId) {
 		return tservice.searchTravels(travelsId);
 	}
 	@GetMapping("/vtravels")

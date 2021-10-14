@@ -32,11 +32,11 @@ public class RouteController {
 		return roservice.updateRoute(route);
 	}
 	@DeleteMapping("/rroute/{routeId}")
-	public String removeRoute(@PathVariable Long routeId) {
+	public String removeRoute(@PathVariable("routeId") Long routeId) {
 		return roservice.removeRoute(routeId);
 	}
 	@GetMapping("/sroute/{routeId}")
-	public Optional<Route> searchRoute(@PathVariable Long routeId) {
+	public Optional<Route> searchRoute(@PathVariable("routeId")  Long routeId) {
 		return roservice.searchRoute(routeId);
 	}
 	@GetMapping("/vroute")

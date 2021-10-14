@@ -18,13 +18,24 @@ public class Feedback {
 	Long feedbackId;
 	String feedback;
 	int rating;
-	Long customerId;
+	 @OneToOne(cascade=CascadeType.ALL)
+	    
+	    @JoinColumn(name="CUSTOMER_ID")
+	 Customer customer;
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	/*Long customerId;
 	public Long getCustomerId() {
 		return customerId;
 	}
 	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
-	}
+	}*/
 	public Feedback() {
 		super();
 	}
@@ -55,13 +66,13 @@ public class Feedback {
 		this.submitDate = submitDate;
 	}
 	
-	public Feedback(Long feedbackId, String feedback, int rating, LocalDate submitDate,Long customerId) {
+	public Feedback(Long feedbackId, String feedback, int rating, LocalDate submitDate,Customer customer) {
 		super();
 		this.feedbackId = feedbackId;
 		this.feedback = feedback;
 		this.rating = rating;
 		this.submitDate = submitDate;
-		this.customerId = customerId;
+		this.customer = customer;
 	}
 	/*public Customer getCustomer() {
 		return customer;

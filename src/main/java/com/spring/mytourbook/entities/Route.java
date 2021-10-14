@@ -22,13 +22,13 @@ public class Route {
 	
     @Column(name = "ROUTE_ID")
 	Long routeId;
-	Long reportId;
+	/*Long reportId;
 	public Long getReportId() {
 		return reportId;
 	}
 	public void setReportId(Long reportId) {
 		this.reportId = reportId;
-	}
+	}*/
 	String routeFrom;
 	String routeTo;
 	@Column
@@ -44,12 +44,12 @@ public Route() {
 		super();
 	}
 public Route(Long routeId, String routeFrom, String routeTo, LocalDateTime departureTime,
-			LocalDateTime arrivalTime, LocalDate doj, String pickupPoint, double fare,Long reportId) {
+			LocalDateTime arrivalTime, LocalDate doj, String pickupPoint, double fare) {
 		super();
 		this.routeId = routeId;
 		this.routeFrom = routeFrom;
 		this.routeTo = routeTo;
-		this.reportId=reportId;
+		//this.reportId=reportId;
 		this.departureTime = departureTime;
 		this.arrivalTime = arrivalTime;
 		this.doj = doj;

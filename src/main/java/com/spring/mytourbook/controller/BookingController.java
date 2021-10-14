@@ -24,7 +24,7 @@ public Booking doBooking(@RequestBody Booking booking) {
 
 @DeleteMapping("/cbooking/{bookingId}")
 
-public  String cancelBooking(@PathVariable Long bookingId){
+public  String cancelBooking(@PathVariable("bookingId") Long bookingId){
 
  
 
@@ -33,7 +33,7 @@ return bservice.cancelBooking(bookingId);
 }
 @GetMapping("/vbooking/{bookingId}")
 
-public  Optional<Booking> viewBooking(@PathVariable Long bookingId){
+public  Optional<Booking> viewBooking(@PathVariable("bookingId") Long bookingId){
 
 return bservice.viewBooking(bookingId);
 

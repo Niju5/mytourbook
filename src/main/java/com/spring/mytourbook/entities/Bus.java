@@ -64,8 +64,8 @@ public class Bus {
 	}
 	 @OneToOne(cascade=CascadeType.ALL)
 
-	 @JoinColumn(name = "ROUTE_ID", referencedColumnName = "ROUTE_ID", insertable = false, updatable = false)
-	    private Route route;
+	 @JoinColumn(name = "ROUTE_ID", referencedColumnName = "ROUTE_ID")
+	    public Route route;
 	
 	public Route getRoute() {
 		return route;
@@ -80,8 +80,8 @@ public class Bus {
 		this.ticketDetails = ticketDetails;
 	}
 	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name = "TICKET_ID", referencedColumnName = "TICKET_ID", insertable = false, updatable = false)
-	    private TicketDetails ticketDetails;
+	@JoinColumn(name = "TICKET_ID", referencedColumnName = "TICKET_ID")
+	    public TicketDetails ticketDetails;
 	  
 	
 }

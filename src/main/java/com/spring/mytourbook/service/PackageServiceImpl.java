@@ -7,30 +7,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.spring.mytourbook.entities.TravelPackage;
+import com.spring.mytourbook.entities.Travels;
 import com.spring.mytourbook.repository.IFeedbackRepository;
 import com.spring.mytourbook.repository.IPackageRepository;
+import com.spring.mytourbook.repository.ITravelsRepository;
 
 @Service
 
 public class PackageServiceImpl implements IPackageService{
 	@Autowired
     IPackageRepository repo;
+	@Autowired
+    ITravelsRepository repot;
 	@Override
 	public TravelPackage addPackage(TravelPackage travelpackage) {
 		// TODO Auto-generated method stub
+		
 		System.out.println("Successfully saved");
 
 		return repo.save(travelpackage);
 	}
 
 	@Override
-	public TravelPackage deletePackage(Long packageId) {
+	public String deletePackage(Long packageId) {
 		// TODO Auto-generated method stub
 		
 		System.out.println("Successfully deleted"+packageId);
 
 		 repo.deleteById(packageId);
-		 return null;
+		 return "deleted";
 	}
 
 	
